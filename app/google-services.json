@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "594942745937",
+    "firebase_url": "https://satunetra-v2-default-rtdb.firebaseio.com",
+    "project_id": "satunetra-v2",
+    "storage_bucket": "satunetra-v2.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594942745937:android:549f2759d2ec4e97998770",
+        "android_client_info": {
+          "package_name": "com.example.satunetra_v3"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594942745937-gna3muaiu3a3pdiphcgr8ag40jraejft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEBOL2WCg9Pm2VDZUG-eIWY_0jEVxyM0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594942745937-gna3muaiu3a3pdiphcgr8ag40jraejft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

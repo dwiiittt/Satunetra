@@ -1,0 +1,332 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+	 <topic name="kabar">
+        <category>
+            <pattern>*</pattern>
+            <template>Mohon maaf saya kurang mengerti dengan maksud anda, mohon sampaikan perasaan anda saat ini</template>
+        </category>
+       
+        <category>
+            <pattern><set>good</set></pattern>
+            <template>
+                 <think><set name = "topic">good</set></think>
+                #good#Senang mendengarnya, apakah ada yang bisa saya bantu? ucapkan ya atau tidak
+            </template>
+        </category>
+       
+        <category>
+            <pattern><set>bad</set></pattern>
+            <template>
+                <think><set name = "topic">feeling</set></think>
+                #bad#Baiklah, Saya dapat mengerti, anda bisa menyatakan beberapa persaan yang mungkin mengganggumu hari ini atau akhir akhir ini seperti sedih, cemas, atau trauma dan lain lain ?
+            </template>
+        </category>
+
+        <category>
+            <pattern><set>good</set> *</pattern>
+            <template>
+                <srai><formal><star/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>good</set></pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>good</set> *</pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern><set>bad</set> *</pattern>
+            <template>
+                <srai><formal><star/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>bad</set></pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>bad</set> *</pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+    </topic>
+
+    <topic name="good">
+        <category>
+                <pattern><set>no</set></pattern>
+                <template>
+                     <think><set name = "topic">welcome</set></think>
+                     #NO#<srai>close1</srai>
+                </template>
+            </category>
+        <category>
+            <pattern>*</pattern>
+            <template>Maaf saya kurang paham maksud anda</template>
+        </category>
+
+         <category>
+            <pattern><set>yes</set></pattern>
+            <template>
+                #YES#<srai>HELP</srai>
+            </template>
+        </category>
+        <category>
+            <pattern><set>yes</set> *</pattern>
+            <template>
+                <srai><formal><star/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>yes</set></pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>yes</set> *</pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern><set>no</set> *</pattern>
+            <template>
+                <srai><formal><star/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>no</set></pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>no</set> *</pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+    </topic>
+
+    <topic name="feeling">
+        <category>
+	        <pattern>*</pattern>
+	        <template>Mohon maaf saya tidak dapat memahami anda atau kata kunci yang anda sebutkan kurang spesifik, tolong ucapkan beberapa kata yang mungkin saya pahami seperti takut, cemas, sedih, trauma, dan lain-lain. Jika anda ingin berkonsultasi lebih lanjut kepada ahli anda dapat menghubungi pusat layanan psikologi Universitas Negeri Makassar di nomor 0852 3186 2994 atau layanan psikologi yang lain. Jangan ragu untuk mencari bantuan profesional jika Anda memerlukan dukungan tambahan.</template>
+        </category>
+        <category>
+            <pattern><set>feel</set></pattern>
+            <template>
+                <think><set name = "topic">feeling2</set></think>
+                <think><set name = "feel"><map name="feel"><star/></map></set></think>
+                <condition name= "feel" value = "a01">
+                    <random>
+                    <li>#a01#Saya bisa memahami jika Anda merasa terjebak dalam perasaan negatif. Tapi perlu diingat bahwa Anda memiliki nilai dan penting bagi dunia. Mari kita berbicara tentang cara untuk meningkatkan kualitas hidup Anda. Apakah anda ingin melanjutkan, ucapkan kata kunci ya atau tidak ?</li>
+                    <li>#a01#Saya ingin Anda tahu bahwa Anda layak mendapatkan bantuan dan dukungan, dan tidak perlu merasa malu atau takut untuk mencari bantuan. Mari kita mencari cara untuk membantu Anda merasa lebih baik dan memulai langkah-langkah untuk meraih kembali kualitas hidup yang lebih baik. Apakah anda ingin melanjutkan, ucapkan kata kunci ya atau tidak ?</li>
+                    <li>#a01#Saya sangat menghargai bahwa Anda telah mencapai titik di mana Anda ingin mencari bantuan dan dukungan. Ada banyak sumber daya dan pilihan yang tersedia untuk membantu Anda. Kita bisa bekerja sama untuk menemukan cara-cara untuk membantu Anda merasa lebih baik Apakah anda ingin melanjutkan, ucapkan kata kunci ya atau tidak ?</li>
+                    </random>
+                </condition>
+                <condition name= "feel" value = "a02">
+                    <random>
+                    <li>#a02#Kecemasan bisa sangat mengganggu, tetapi saya ingin Anda tahu bahwa Anda tidak sendirian. Mari kita berbicara tentang cara-cara untuk mengatasi perasaan cemas ini bersama-sama. Apakah anda ingin melanjutkan, ucapkan kata kunci ya atau tidak ?</li>
+                    <li>#a02#Saya ingin Anda tahu bahwa tidak ada yang salah dengan merasa cemas atau membutuhkan bantuan. Ada banyak teknik dan strategi yang bisa membantu mengatasi kecemasan, dan saya siap membantu Anda menemukan cara-cara yang tepat untuk Anda. Apakah anda ingin melanjutkan, ucapkan kata kunci ya atau tidak ?</li>
+                    <li>#a02#Saya menghargai bahwa Anda telah menemukan keberanian untuk berbicara tentang kecemasan Anda. Kita bisa bekerja sama untuk menemukan cara-cara untuk mengatasi perasaan cemas ini dan membantu Anda merasa lebih baik. Apakah anda ingin melanjutkan, ucapkan kata kunci ya atau tidak ?</li>
+                    </random>
+                </condition>
+                <condition name= "feel" value = "a03">
+                    <random>
+                    <li>#a03#Saya mengerti bahwa pengalaman traumatis bisa sangat mengganggu dan menyebabkan kesulitan dalam kehidupan sehari-hari. Mari kita bekerja bersama untuk menemukan cara-cara untuk mengelola gejala yang Anda alami dan membantu Anda merasa lebih baik. Apakah anda ingin melanjutkan, ucapkan kata kunci ya atau tidak ?</li>
+                    <li>#a03#Saya menghargai keberanian Anda untuk berbicara tentang pengalaman traumatis Anda. Mari kita bicarakan tentang beberapa pilihan yang mungkin tepat untuk Anda. Apakah anda ingin melanjutkan, ucapkan kata kunci ya atau tidak ?</li>
+                    <li>#a03#Saya memahami bahwa gejala pasca trauma dapat sangat mengganggu dan mempengaruhi kehidupan sehari-hari Anda. Jika Anda merasa perlu, saya dapat membantu Anda menemukan alternatif alternatif untuk mengurangi perasaan yang ditimbuklan dari pengalaman traumatis tersebut. Apakah anda ingin melanjutkan, ucapkan kata kunci ya atau tidak ?</li>
+                    </random>
+                </condition>
+            </template>
+        </category>
+        <category>
+            <pattern><set>feel</set> *</pattern>
+            <template>
+                <srai><formal><star/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>feel</set></pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>feel</set> *</pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+    </topic>
+
+    <topic name="feeling2">
+        <category>
+	        <pattern>*</pattern>
+	        <template>Mohon maaf saya tidak dapat memahami anda, tolong ucapkan beberapa kata yang mungkin saya pahami seperti takut, cemas, sedih, trauma, dan lain-lain. Jika anda ingin berkonsultasi lebih lanjut kepada ahli anda dapat menghubungi pusat layanan psikologi Universitas Negeri Makassar di nomor 0852 3186 2994 atau layanan psikologi yang lain. Jangan ragu untuk mencari bantuan profesional jika Anda memerlukan dukungan tambahan.</template>
+        </category>
+        <category>
+            <pattern><set>yes</set></pattern>
+            <template>
+                <think><set name = "topic">audio</set></think>
+                <condition name= "feel" value = "a01">
+                   <random>
+                       <li>Memang sulit untuk melawan emosi dan pikiran negatif yang muncul saat depresi. Namun, hal ini bukan berarti Anda tidak bisa melawannya, kok. Saat sedang merasa terpuruk, cobalah untuk berpikir positif dan motivasi diri Anda. Tanamkan ide dan katakan pada diri Anda “saya pasti bisa”. Anda bisa mengucapkan kalimat tersebut berulang ulang untuk memperkuat keyakinan anda pada diri sendir. Anda juga bisa mencoba meditasi untuk menenangkan pikiran dan emosi. Jika selama ini Anda sulit mengontrol pikiran negatif yang muncul, cobalah untuk menceritakan perasaan Anda pada orang terdekat atau dengan psikolog. Apakah anda ingin mencoba audio terapi, ucapkan kata kunci ya atau tidak ?</li>
+                       <li>Berikut adalah beberapa hal untuk mengatasi perasaan negative yang anda rasakan Fokus pada kemampuan Anda dan bukan kekurangan Anda. Ingatlah bahwa Anda memiliki kelebihan dan kemampuan untuk mengatasi tantangan yang Anda hadapi. Cobalah untuk memfokuskan pikiran Anda pada hal-hal yang Anda kuasai dan menggunakannya untuk membantu mengatasi depresi. Berbicara dengan diri sendiri secara positif: Bicaralah dengan diri Anda sendiri secara positif dan buang pikiran negatif yang bisa memperburuk depresi Anda. Ingatlah bahwa Anda mampu mengatasi depresi dan Anda memiliki nilai yang penting dan bermanfaat. Jika Anda mengalami kegagalan atau kesulitan dalam mengatasi depresi. Teruslah mencoba dan berpikirlah bahwa setiap kegagalan adalah kesempatan untuk belajar dan memperbaiki diri. Apakah anda ingin mencoba audio terapi, ucapkan kata kunci ya atau tidak ?</li>
+                   </random>
+                </condition>
+                <condition name= "feel" value = "a02">
+                    <random>
+                        <li>Teknik pernapasan dapat menjadi cara yang efektif untuk mengurangi kecemasan. Posisi duduk atau berbaring dengan nyaman dan tutup mata Anda. Tarik napas perlahan-lahan melalui hidung selama 4 detik, tahan napas selama 7 detik, dan buang napas melalui mulut selama 8 detik. Ulangi teknik ini beberapa kali sampai Anda merasa lebih tenang dan rileks. Teknik pernapasan bukanlah satu satunya cara untuk menghilangkan perasaan cemas, anda dapat menghubungi tenaga professional jika kecemasan anda terus berlanjut. Apakah anda ingin mencoba audio terapi, ucapkan kata kunci ya atau tidak ?</li>
+                        <li>Anda dapat membuat jurnal harian berupa catatan catatan aktivitas hal ini juga merupakan salah satu bentu dari menyediakan waktu untuk diri sendiri, anda juga bisa melakukan aktivitas lain dengan berjalan santai, melakukan meditasi, atau sekadar berendam di air hangat. Bila perlu, matikan telepon genggam selama beberapa saat agar Anda tidak terganggu. Terkadang, rasa cemas dapat disebabkan oleh meningkatnya hormon stres. Menyediakan waktu untuk diri sendiri dan melakukan relaksasi adalah salah satu cara yang bisa membuat Anda merasa lebih tenang dan rasa cemas pun mereda. Apakah anda ingin mencoba audio terapi, ucapkan kata kunci ya atau tidak ?</li>
+                    </random>
+                </condition>
+                <condition name= "feel" value = "a03">
+                    <random>
+                        <li>Anda dapat mengatasi stress akibat trauma dengan melakukan beberapa kegiatan seperti Konsumsi makanan yang sehat, cukup tidur, berolahraga secara teratur, dan melakukan berbagai hal lain untuk menjaga tubuh Anda berfungsi dengan baik. Selain itu, cobalah melakukan hal-hal yang Anda sukai, untuk menghilangkan stres. Beraktivitas dapat membantu mengalihkan pikiran Anda dan mengatasi trauma. Rasa bersalah, malu, marah, kecewa, sedih, dan mengasihani diri sendiri secara berkepanjangan, justru akan menjadi penyakit bagi diri sendiri. Menerima apa yang terjadi dapat mempermudah proses pemulihan diri dari trauma. Apakah anda ingin mencoba audio terapi, ucapkan kata kunci ya atau tidak ?</li>
+                        <li>Ketika berhadapan dengan trauma psikologis, fokuslah pada apa yang benar-benar perlu dilakukan dalam keseharian, sehingga Anda dapat menghemat energi fisik dan emosional.Apabila Anda tidak dapat mengatasi trauma sendiri, carilah bantuan. Anda bisa curhat kepada teman atau keluarga, berkonsultasi ke psikolog atau psikiater, atau mendatangi organisasi masyarakat yang bergerak dalam bidang konsultasi khusus bagi penderita trauma. Pada dasarnya trauma akan menimbulkan berbagai perasaan tidak menyenangkan. Hal tersebut memang wajar terjadi. Meski demikian, segera lakukan cara untuk mengatasi trauma agar Anda tidak selalu dihantui oleh kejadian yang sudah terjadi. Biarkan masa-masa menyedihkan itu berlalu dan jangan biarkan dampak buruk dari kejadian tersebut merusak masa depan Anda. Apakah anda ingin mencoba audio terapi, ucapkan kata kunci ya atau tidak ?</li>
+                    </random>
+                </condition>
+            </template>
+        </category>
+     <category>
+            <pattern><set>no</set></pattern>
+            <template>
+            <think><set name = "topic">audio</set></think>
+             Baiklah, saya juga  memiliki fitur audio terapi dan musik yang dapat membantu anda merilekskan pikiran dan suasana hati, apa anda ingin mencobanya ? ucapkan kata kunci ya atau tidak
+            </template>
+        </category>
+     <category>
+            <pattern><set>feel</set> *</pattern>
+            <template>
+                <srai><formal><star/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>feel</set></pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>feel</set> *</pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+         <category>
+            <pattern><set>yes</set> *</pattern>
+            <template>
+                <srai><formal><star/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>yes</set></pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>yes</set> *</pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern><set>no</set> *</pattern>
+            <template>
+                <srai><formal><star/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>no</set></pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>no</set> *</pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+    </topic>
+    
+    <topic name="audio">
+        <category>
+	        <pattern>*</pattern>
+	        <template>mohon maaf kami tidak dapat mengidentifikasi jawaban kamu, silakan menyebutkan kata kunci ya atau tidak</template>
+        </category>
+        <category>
+            <pattern><set>yes</set></pattern>
+            <template>
+                <think><set name = "topic"><get name="feel"/></set></think>
+                <condition name= "feel" value = "a01">
+                   #yes#Apakah anda ingin memutar musik terapi, auido meditasi atau suara alam ?
+                </condition>
+                <condition name= "feel" value = "a02">
+                   #yes#Apakah anda ingin memutar musik terapi, audio meditasi atau suara alam ?
+                </condition>
+                <condition name= "feel" value = "a03">
+                    #yes#Apakah anda ingin memutar audio meditasi atau suara alam ?
+                </condition>
+            </template>
+        </category>
+        <category>
+            <pattern><set>no</set></pattern>
+            <template>
+                 <think><set name = "topic">welcome</set></think>
+                 #no#<srai>close1</srai>
+            </template>
+        </category>
+        
+        <category>
+            <pattern><set>yes</set> *</pattern>
+            <template>
+                <srai><formal><star/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>yes</set></pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>yes</set> *</pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern><set>no</set> *</pattern>
+            <template>
+                <srai><formal><star/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>no</set></pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+        <category>
+            <pattern>* <set>no</set> *</pattern>
+            <template>
+                <srai><formal><star index="2"/></formal></srai>
+            </template>
+        </category>
+    </topic>
+
+</aiml>

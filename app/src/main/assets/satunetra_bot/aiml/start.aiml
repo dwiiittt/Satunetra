@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+	<!-- insert your AIML categories here -->
+	<category>
+	    <pattern>REGISTER</pattern>
+	    <template>
+	        <think><set name = "topic">next</set></think>
+	        Selamat datang di Satunetra, Sahabat Artifisial Intelegens Tuna Netra, untuk bicara tekan bagian tengah layar. Ucapkan lanjutkan untuk menuju ke menu pendaftaran
+	    </template>
+	</category>
+	<category>
+	    <pattern>HELP</pattern>
+        <template>
+            <think><set name = "topic">feeling</set></think>
+             Silakan menyampaikan apa yang anda rasakan saat ini atau hal apa yang akhir akhir ini mengganggu anda
+        </template>
+    </category>
+
+     <category>
+        <pattern>W1</pattern>
+        <template>
+            <think><set name = "topic">feeling</set></think>
+              Hai, Saya adalah Sahabat Netra, saya merupakan sahabat AI atau mesin yang bekerja dengan sistem kecerdasan buatan untuk membantu anda. Anda dapat menyebutkan keluhan keluhan atau hal hal yang mengganggu akhir akhir ini. Baiklah %s, Bagiamana harimu hari ini ?
+        </template>
+    </category>
+
+    <category>
+        <pattern>W2</pattern>
+        <template>
+            <think><set name = "topic">kabar</set></think>
+            <random>
+                <li>Hai %s! gimana kabarmu hari ini?</li>
+                <li>Halo %s! apa Kabar</li>
+                <li>$Pagi#Siang#Sore#Malam# %s! Apa kabar</li>
+            </random>
+        </template>
+    </category>
+
+    <category>
+        <pattern>WOFFLINE</pattern>
+        <template>
+            <think><set name = "topic">offline</set></think>
+            Sepertinya perangkat anda tidak tersambung ke internet, Harap sambungkan dengan internet dan buka kembali aplikasi.
+        </template>
+    </category>
+
+    <category>
+    <pattern>CLOSE0</pattern>
+    <template>
+        Terima kasih telah menggunakan satu netra aplikasi akan menutup dalam 3 detik.
+    </template>
+     </category>
+    <category>
+        <pattern>CLOSE1</pattern>
+        <template>
+           Baiklah tampaknya kamu butuh istirahat dan waktu sendiri, manfaatkan waktumu untuk menjernihkan pikiran. Jika kamu ingin mengulang sesi konsultasi usap layar dari atas kebawah dan jika kamu ingin keluar dari aplikasi silakan mengusap layar dari kiri ke kanan. Terimakasih telah menggunakan Satunetra sebagai sahabat mu.
+        </template>
+    </category>
+    <category>
+        <pattern>CLOSE2</pattern>
+        <template>
+           Sebelum keluar dari aplikasi ini kami sangat mengharapkan anda memberikan ulasan mengenai aplikasi ini, seperti bagaimana perasaan anda setelah konsultasi. Untuk keluar tanpa memberi ulasan geser aplikasi dari kiri kekanan
+        </template>
+    </category>
+
+    <category>
+        <pattern>END</pattern>
+        <template>
+            <think><set name = "topic">end</set></think>
+            Sesi terapi anda telah berakhir, ucapkan "Ya" jika anda ingin melanjutkan sesi obrolan, Ucapkan "Tidak" untuk menutup aplikasi, dan ucapkan "Riwayat" jika anda ingin mengakses riwayat terapi anda.
+        </template>
+    </category>
+
+
+</aiml>

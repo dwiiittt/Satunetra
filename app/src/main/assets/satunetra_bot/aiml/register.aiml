@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<aiml version="2.0">
+    
+    <topic name="next">
+	    <category>
+    	    <pattern>LANJUTKAN</pattern>
+    	    <template>
+    	        <think><set name = "topic">registrasi</set></think>
+    	        Halaman ini merupakan halaman registrasi. Kami akan meminta anda untuk memasukkan nama anda. Untuk memulai atau melanjutkan kelangkah berikutnya usap layar dari kiri ke kanan.
+    	    </template>
+	    </category>
+	</topic>
+	
+	<topic name="registrasi">
+	    <category>
+    	    <pattern>NEXT</pattern>
+    	    <template>
+    	        <think><set name = "topic">finish</set></think>
+    	        Silahkan menyebutkan nama anda
+    	    </template>
+	    </category>
+	</topic>
+	    
+	
+	<topic name="finish">
+        <category>
+            <pattern>NEXT</pattern>
+            <template>
+                <think><set name = "topic">input</set></think>
+                Data anda telah diinput, anda bernama <get name="nama"/>. Katakan "Iya" untuk menyimpan data anda, dan "Tidak" untuk keluar tanpa menyimpan data.
+            </template>
+        </category>
+        <category>
+	        <pattern>*</pattern>
+	        <template>
+	            <think><set name = "nama"><star/></set></think>
+	            <star/>
+	        </template>
+        </category>
+    </topic>
+    
+    <topic name="input">
+	    <category>
+	        <pattern><set>yes</set></pattern>
+	        <template>
+	            #<star/>#Selamat data anda berhasil disimpan. Sebelum melanjutkan penggunaan Aplikasi, saya akan menjelaskan tentang panduan penggunaan terlebih dahulu. Setelah intruksi panduan ini berakhir kamu akan dialihkan ke halaman awal konsultasi, kamu dapat menceritakan apapun yang ingin kamu ceritakan mulai dari bagaimana harimu hari ini?, atau kamu dapat langsung bertanya tentang kondisi mental yang kamu rasakan saat ini, kami akan berusaha memberikan solusi yang tepat untuk mengatasi kecemasan, stress, kehilangan percaya diri, dan insomnia. Untuk melanjutkan ke menu konsultasi usap layar dari kiri ke kanan
+	        </template>
+        </category>
+        <category>
+	        <pattern><set>no</set></pattern>
+	        <template>
+	           #<star/>#
+	           <srai>close0</srai>
+	        </template>
+        </category>
+    </topic>
+
+</aiml>
