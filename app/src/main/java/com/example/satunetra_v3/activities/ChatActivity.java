@@ -594,9 +594,9 @@ public class ChatActivity extends AppCompatActivity implements View.OnTouchListe
                             instructionKey = "b07";
                             System.out.println("b07");
 
-                        } else if (yorn[0].equalsIgnoreCase("b07")) {
-                            instructionKey = "b07";
-                            System.out.println("b07");
+                        } else if (yorn[0].equalsIgnoreCase("b08")) {
+                            instructionKey = "b08";
+                            System.out.println("b08");
                         }
                     }
                     deep = 6;

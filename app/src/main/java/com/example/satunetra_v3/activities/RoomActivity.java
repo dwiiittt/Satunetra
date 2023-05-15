@@ -52,6 +52,7 @@ public class RoomActivity extends AppCompatActivity implements View.OnTouchListe
                     playOnline();
                 }else{
                     links = null;
+                    playOffline();
                 }
             }},300);
         String type = getIntent().getStringExtra("type");
@@ -102,6 +103,38 @@ public class RoomActivity extends AppCompatActivity implements View.OnTouchListe
         }
     }
 
+    private void playOffline(){
+        mediaPlayer.stop();
+        mediaPlayer.reset();
+        tvTitleSesi.setText("Sesi Offline");
+        try {
+            mediaPlayer.setDataSource(getApplicationContext(), Uri.parse("android.resource://com.example.satunetra_bot_test/"+R.raw.offline_music));
+        } catch (IllegalArgumentException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IllegalStateException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        try {
+            mediaPlayer.prepare();
+        } catch (IllegalStateException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        } catch (IOException e) {
+            // TODO Auto-generated catch block
+            e.printStackTrace();
+        }
+        mediaPlayer.setOnPreparedListener(new MediaPlayer.OnPreparedListener() {
+            @Override
+            public void onPrepared(MediaPlayer mp) {
+                mp.start();
+            }
+        });
+    }
 
     @Override
     public boolean onTouch(View v, MotionEvent event) {
