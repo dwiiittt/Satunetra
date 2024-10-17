@@ -523,12 +523,17 @@ public class ChatActivity extends AppCompatActivity implements View.OnTouchListe
                     if (yorn[0].equalsIgnoreCase("YES")) {
                         System.out.println("BUTUH BANTUAN");
                         deep = 3;
-                    } else {
-                        System.out.println("CLOSE AJA");
-                        allowClose = true;
+                    } else if(yorn[0].equalsIgnoreCase("NO")) {
+                    allowClose = true;
+                    deep = 7;
+                    } else if(yorn[0].equalsIgnoreCase("HISTORY")){
+                    afterPlay = false;
+                    respond = helper.readHistory();
+                    allowClose = true;
                     }
                 }
             }
+
             if (deep == 3) {
                 System.out.println("GET FEEL");
                 if (respond.trim().charAt(0) == '#') {

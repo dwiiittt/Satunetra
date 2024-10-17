@@ -12,7 +12,7 @@
 	    <pattern>HELP</pattern>
         <template>
             <think><set name = "topic">feeling</set></think>
-             Silakan menyampaikan apa yang anda rasakan saat ini atau hal apa yang akhir akhir ini mengganggu anda
+             Silakan menyampaikan apa yang anda rasakan saat ini atau hal apa yang akhir akhir ini mengganggu anda, Untuk bicara silakan tap layar.
         </template>
     </category>
 
@@ -20,7 +20,7 @@
         <pattern>W1</pattern>
         <template>
             <think><set name = "topic">feeling</set></think>
-              Hai, Saya adalah Sahabat Netra, saya merupakan sahabat AI atau mesin yang bekerja dengan sistem kecerdasan buatan untuk membantu anda. Anda dapat menyebutkan keluhan keluhan atau hal hal yang mengganggu akhir akhir ini. Baiklah %s, Bagiamana harimu hari ini ?
+              Hai, Saya adalah Sahabat Netra, saya merupakan sahabat AI atau mesin yang bekerja dengan sistem kecerdasan buatan untuk membantu anda. Anda dapat menyebutkan keluhan keluhan atau hal hal yang mengganggu akhir akhir ini. Baiklah %s, Apakah ada yang bisa saya bantu ?. Untuk bicara silakan tap layar.
         </template>
     </category>
 
@@ -29,9 +29,9 @@
         <template>
             <think><set name = "topic">kabar</set></think>
             <random>
-                <li>Hai %s! gimana kabarmu hari ini?</li>
-                <li>Halo %s! apa Kabar</li>
-                <li>$Pagi#Siang#Sore#Malam# %s! Apa kabar</li>
+                <li>Hai %s! gimana kabarmu hari ini?. Untuk bicara silakan tap layar.</li>
+                <li>Halo %s! apa Kabar. Untuk bicara silakan tap layar.</li>
+                <li>$Pagi#Siang#Sore#Malam# %s! Apa kabar.Untuk bicara silakan tap layar.</li>
             </random>
         </template>
     </category>
@@ -53,13 +53,13 @@
     <category>
         <pattern>CLOSE1</pattern>
         <template>
-           Baiklah tampaknya kamu butuh istirahat dan waktu sendiri, manfaatkan waktumu untuk menjernihkan pikiran. Jika kamu ingin mengulang sesi konsultasi usap layar dari atas kebawah dan jika kamu ingin keluar dari aplikasi silakan mengusap layar dari kiri ke kanan. Terimakasih telah menggunakan Satunetra sebagai sahabat mu.
+           Baiklah tampaknya kamu butuh istirahat dan waktu sendiri, manfaatkan waktumu untuk menjernihkan pikiran. Jika kamu ingin mengulang sesi konsultasi usap layar dari atas kebawah dan jika kamu ingin keluar dari aplikasi silakan mengusap layar dari kiri ke kanan. Terimakasih telah menggunakan Satunetra sebagai sahabat mu. Terima kasih telah menggunakan Satunetra, saya berharap bahwa anda selalu dalam keadaan sehat baik fisik maupun mental. Anda dapat menghubungi tenaga professional untuk melakukan konsultasi lebih lanjut. Anda dapat menghubungi pusat layanan psikologi Universitas Negeri Makassar di nomor 0 8 5 2 3 1 8 6 2 9 9 4 atau layanan psikologi yang lain.
         </template>
     </category>
     <category>
         <pattern>CLOSE2</pattern>
         <template>
-           Sebelum keluar dari aplikasi ini kami sangat mengharapkan anda memberikan ulasan mengenai aplikasi ini, seperti bagaimana perasaan anda setelah konsultasi. Untuk keluar tanpa memberi ulasan geser aplikasi dari kiri kekanan
+           Sebelum keluar dari aplikasi ini kami sangat mengharapkan anda memberikan ulasan mengenai aplikasi ini, seperti bagaimana perasaan anda setelah konsultasi. Untuk keluar tanpa memberi ulasan geser aplikasi dari kiri kekanan. Terima kasih telah menggunakan Satunetra, saya berharap bahwa anda selalu dalam keadaan sehat baik fisik maupun mental. Anda dapat menghubungi tenaga professional untuk melakukan konsultasi lebih lanjut. Anda dapat menghubungi pusat layanan psikologi Universitas Negeri Makassar di nomor 0 8 5 2 3 1 8 6 2 9 9 4 atau layanan psikologi yang lain.
         </template>
     </category>
 

@@ -8,13 +8,14 @@ android {
     compileSdk 33
 
     defaultConfig {
-        applicationId "com.example.satunetra_v3"
+        applicationId "com.satunetrav3.satunetra_v3"
         minSdk 21
         targetSdk 32
-        versionCode 1
+        versionCode 4
         versionName "1.0"
         multiDexEnabled true
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+        signingConfig signingConfigs.debug
     }
 
     buildTypes {

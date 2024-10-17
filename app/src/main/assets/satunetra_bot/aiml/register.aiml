@@ -16,7 +16,7 @@
     	    <pattern>NEXT</pattern>
     	    <template>
     	        <think><set name = "topic">finish</set></think>
-    	        Silahkan menyebutkan nama anda
+    	        Silahkan tap layar dan menyebutkan nama anda
     	    </template>
 	    </category>
 	</topic>
@@ -43,7 +43,7 @@
 	    <category>
 	        <pattern><set>yes</set></pattern>
 	        <template>
-	            #<star/>#Selamat data anda berhasil disimpan. Sebelum melanjutkan penggunaan Aplikasi, saya akan menjelaskan tentang panduan penggunaan terlebih dahulu. Setelah intruksi panduan ini berakhir kamu akan dialihkan ke halaman awal konsultasi, kamu dapat menceritakan apapun yang ingin kamu ceritakan mulai dari bagaimana harimu hari ini?, atau kamu dapat langsung bertanya tentang kondisi mental yang kamu rasakan saat ini, kami akan berusaha memberikan solusi yang tepat untuk mengatasi kecemasan, stress, kehilangan percaya diri, dan insomnia. Untuk melanjutkan ke menu konsultasi usap layar dari kiri ke kanan
+	            #<star/>#Selamat data anda berhasil disimpan. Sebelum melanjutkan penggunaan Aplikasi, saya akan menjelaskan tentang panduan penggunaan terlebih dahulu. Setelah intruksi panduan ini berakhir kamu akan dialihkan ke halaman awal konsultasi, anda dapat menceritakan apapun yang ingin anda ceritakan mulai dari bagaimana harimu hari ini?, atau anda dapat langsung mengutarakan tentang kondisi mental yang anda rasakan saat ini, kami akan berusaha memberikan solusi yang tepat untuk mengatasi kecemasan, stress, sedih dan lain-lain. Untuk melanjutkan ke menu konsultasi usap layar dari kiri ke kanan
 	        </template>
         </category>
         <category>

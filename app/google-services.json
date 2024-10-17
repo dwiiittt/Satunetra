@@ -8,9 +8,38 @@
   "client": [
     {
       "client_info": {
-        "mobilesdk_app_id": "1:594942745937:android:549f2759d2ec4e97998770",
+        "mobilesdk_app_id": "1:594942745937:android:6de29427cf004934998770",
         "android_client_info": {
-          "package_name": "com.example.satunetra_v3"
+          "package_name": "com.satunetra_pkm.satunetra"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "594942745937-gna3muaiu3a3pdiphcgr8ag40jraejft.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDEBOL2WCg9Pm2VDZUG-eIWY_0jEVxyM0A"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "594942745937-gna3muaiu3a3pdiphcgr8ag40jraejft.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:594942745937:android:d58a386f3c47b583998770",
+        "android_client_info": {
+          "package_name": "com.satunetrav3.satunetra_v3"
         }
       },
       "oauth_client": [

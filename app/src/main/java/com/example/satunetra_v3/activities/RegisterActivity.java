@@ -284,7 +284,7 @@ public class RegisterActivity extends AppCompatActivity implements View.OnTouchL
             String[] sub = string.toLowerCase().split(" ");
             for(String subString : sub){
                 System.out.println(subString);
-                //Jika string yang diucapkan adalah lanjutkan
+                //Jika string yang diucapkan adalah iya
                 if(subString.equals("iya")){
                     sendMessage("YA");
                     startSpeak(respond);
